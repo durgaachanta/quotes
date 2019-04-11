@@ -88,10 +88,13 @@ class AuthorQuotes extends React.Component {
     var quotesToDisplay = this.props.quotesBank.find((item) => item.author === this.props.match.params.id);
     console.log(quotesToDisplay);
     return (
-      <div>
-        <Link to="/">Home</Link>
-        <Link to={`/write/${this.props.match.params.id}`}>Add a quote</Link>
-        <table>
+      <div className="container-fluid">
+        <div className="row">
+          <Link className="col" to="/">Home</Link>
+          <Link className="col" to={`/write/${this.props.match.params.id}`}>Add a quote</Link>
+        </div>
+        <label>Quotes by: {this.props.match.params.id}</label>
+        <table className="table">
           <tr>
             <th>Quotes</th>
             <th>Votes</th>
@@ -103,9 +106,9 @@ class AuthorQuotes extends React.Component {
                 <td>{item.quote}</td>
                 <td>{item.votes}</td>
                 <td>
-                  <button onClick={() => { this.vote(item, idx, "up") }}>Vote up</button>
-                  <button onClick={() => { this.vote(item, idx, "down") }}>Vote down</button>
-                  <button onClick={() => { this.deleteQuote(idx) }}>Delete</button>
+                  <button className="btn btn-primary btn-lg" onClick={() => { this.vote(item, idx, "up") }}>Vote up</button>
+                  <button className="btn btn-warning btn-lg" onClick={() => { this.vote(item, idx, "down") }}>Vote down</button>
+                  <button className="btn btn-danger btn-lg" onClick={() => { this.deleteQuote(idx) }}>Delete</button>
                 </td>
               </tr>
             )

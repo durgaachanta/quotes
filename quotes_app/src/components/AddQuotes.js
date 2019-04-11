@@ -52,15 +52,15 @@ class AddQuotes extends React.Component {
 
   render() {
     return (
-      <div>
-        <Link to="/">Home</Link>
+      <div className="container-fluid">
+        <Link className="row" to="/">Home</Link>
         <label>Provide a quote by {this.props.match.params.id}:</label>
         {/* input form */}
-        <form onSubmit={(event) => { event.preventDefault() }}>
+        <form className="form-group" onSubmit={(event) => { event.preventDefault() }}>
           <label htmlFor="quoteToAdd">Quote:</label>
-          <input name="quoteToAdd" onChange={this.handleChange} value={this.state.quoteToAdd} />
-          <button onClick={this.cancelForm}>Cancel</button>
-          <button onClick={this.addNewQuote}>Submit</button>
+          <input className="form-control" name="quoteToAdd" onChange={this.handleChange} value={this.state.quoteToAdd} />
+          <button className="btn btn-danger btn-lg" onClick={this.cancelForm}>Cancel</button>
+          <button className="btn btn-primary btn-lg" onClick={this.addNewQuote}>Submit</button>
         </form>
       </div>
 

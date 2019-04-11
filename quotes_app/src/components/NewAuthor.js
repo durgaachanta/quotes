@@ -46,15 +46,15 @@ class NewAuthor extends React.Component {
 
   render() {
     return (
-      <div>
-        <Link to="/">Home</Link>
+      <div className="container-fluid">
+        <Link className="row" to="/">Home</Link>
         <label>Add a new quotable author: </label>
         {/* input form */}
-        <form onSubmit={(event) => { event.preventDefault() }}>
+        <form className="form-group" onSubmit={(event) => { event.preventDefault() }}>
           <label htmlFor="authorName">Name:</label>
-          <input name="authorName" onChange={this.handleChange} value={this.state.authorName} />
-          <button onClick={this.cancelForm}>Cancel</button>
-          <button onClick={this.addNewAuthor}>Submit</button>
+          <input className="form-control" name="authorName" onChange={this.handleChange} value={this.state.authorName} />
+          <button className="btn btn-danger btn-lg" onClick={this.cancelForm}>Cancel</button>
+          <button className="btn btn-primary btn-lg" onClick={this.addNewAuthor}>Submit</button>
         </form>
       </div>
 

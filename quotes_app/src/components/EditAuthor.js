@@ -48,15 +48,15 @@ class EditAuthor extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="container-fluid">
         <Link to="/">Home</Link>
         <label>Edit quotable author: </label>
         {/* input form */}
-        <form onSubmit={(event) => { event.preventDefault() }}>
+        <form className="form-group" onSubmit={(event) => { event.preventDefault() }}>
           <label htmlFor="authorName">Name:</label>
-          <input name="authorName" onChange={this.handleChange} value={this.state.authorName} />
-          <button onClick={() => { this.props.history.push('/') }}>Cancel</button>
-          <button onClick={this.editAuthor}>Submit</button>
+          <input className="form-control" name="authorName" onChange={this.handleChange} value={this.state.authorName} />
+          <button className="btn btn-danger btn-lg" onClick={() => { this.props.history.push('/') }}>Cancel</button>
+          <button className="btn btn-primary btn-lg" onClick={this.editAuthor}>Submit</button>
         </form>
       </div>
 

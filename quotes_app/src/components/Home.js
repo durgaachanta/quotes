@@ -12,6 +12,7 @@ class Home extends React.Component {
     }
 
   };
+
   componentDidMount = () => {
     //axios call to fetch data from MockAPI
     //please move this call to a helper function
@@ -24,12 +25,13 @@ class Home extends React.Component {
         console.log(error);
       });
   }
+
   render() {
     return (
-      <div>
-        <Link to="/new">Add a quotable author</Link>
+      <div className="container-fluid">
+        <Link className="row" to="/new">Add a quotable author</Link>
         <label>We have quotes by:</label>
-        <table>
+        <table className="table">
           <tr>
             <th>Author</th>
             <th>Actions available</th>
@@ -38,10 +40,10 @@ class Home extends React.Component {
             return (<tr>
               <td>{item.author}</td>
               <td>
-                <button>
+                <button className="btn btn-light btn-lg">
                   <Link to={`/quotes/${item.author}`}>View Quotes</Link>
                 </button>
-                <button>
+                <button className="btn btn-dark btn-lg">
                   <Link to={`/edit/${item.author}`}>Edit</Link>
                 </button>
               </td>

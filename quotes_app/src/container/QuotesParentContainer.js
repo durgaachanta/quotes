@@ -14,13 +14,12 @@ class QuotesParentContainer extends React.Component {
     this.state = {
 
     }
-
   };
 
   render() {
     return (
-      <div className="parentcontainer">
-        <h1>Quote Ranks</h1>
+      <div className="container-fluid">
+        <h1 className="row">Quote Ranks</h1>
         {/* Routing */}
         <Switch>
           <Route exact path="/" component={Home} />
